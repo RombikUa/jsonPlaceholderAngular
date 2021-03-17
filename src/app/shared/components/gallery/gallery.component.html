@@ -1,0 +1,10 @@
+<div class="gallery">
+  <div class="image" *ngFor="let photo of photos | activatedItems: showActive">
+    <img [src]="photo.url" [alt]="photo.title">
+
+    <button *ngIf="photo.status !== 'active'; else: disableButton" mat-stroked-button (click)="updateStatus(photo.id, 'active')">Active</button>
+    <ng-template #disableButton>
+      <button mat-stroked-button color="warn" (click)="updateStatus(photo.id, 'deactivated')">Active</button>
+    </ng-template>
+  </div>
+</div>

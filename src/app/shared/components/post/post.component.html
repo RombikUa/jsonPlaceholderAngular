@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h3>{{post.title}}</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{post.body}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="post.status !== 'active'; else: disableButton" mat-stroked-button (click)="updateStatus(post.id, 'active')">Active</button>
+    <ng-template #disableButton>
+      <button mat-stroked-button color="warn" (click)="updateStatus(post.id, 'deactivated')">Active</button>
+    </ng-template>
+  </mat-card-actions>
+</mat-card>

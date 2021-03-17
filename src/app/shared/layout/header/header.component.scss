@@ -1,0 +1,16 @@
+header {
+  padding: 15px 0;
+  display: block;
+  margin-bottom: 30px;
+  box-shadow: 0 0 3px 0 rgb(0 0 0 / 30%);
+}
+
+a {
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
